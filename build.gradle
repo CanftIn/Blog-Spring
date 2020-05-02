@@ -31,14 +31,26 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    // 该依赖用于编译阶段
     compile('org.springframework.boot:spring-boot-starter-web')
 
     // 添加 Thymeleaf 的依赖
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
+    // 添加 Spring Data JPA 的依赖
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    // 添加 MySQL 连接驱动的依赖
+    compile('mysql:mysql-connector-java:8.0.19')
+
+    // 添加 H2 的依赖
+    runtime('com.h2database:h2:1.4.196')
+
     // 该依赖用于测试阶段
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
     implementation 'junit:junit:4.12'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 test {

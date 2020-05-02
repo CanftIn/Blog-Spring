@@ -1,16 +1,9 @@
 package com.canftin.demo.repository;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.canftin.demo.domain.User;
 
-import java.util.List;
+public interface UserRepository extends CrudRepository<User, Long> {
 
-public interface UserRepository {
-
-	User saveOrUpdateUser(User user);
-
-	void deleteUser(Long id);
-
-	User getUserById(Long id);
-
-	List<User> listUser();
 }
